@@ -1,6 +1,15 @@
 .values {
     position: relative;
-    background: url("~images/content/backpack.png") -10% 100% / auto no-repeat;
+    &::before {
+        content: "";
+        position: absolute;
+        top: 30%;
+        left: 0;
+        display: block;
+        width: 580px;
+        height: 630px;
+        background: url("~images/content/backpack.png") 43% 0 / auto no-repeat;
+    }
 }
 
 .values__container {
