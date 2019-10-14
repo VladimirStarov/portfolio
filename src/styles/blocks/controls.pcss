@@ -1,0 +1,30 @@
+.controls {
+    display: flex;
+}
+
+.controls__button {
+    width: 50px;
+    height: 50px;
+    background-color: #353e4e;
+    cursor: default;
+}
+
+.controls__arrow-down {
+    width: 10px;
+    height: 8px;
+    fill: #5c6876;
+    cursor: pointer;
+
+    &:hover {
+        fill: #fff;
+    }
+}
+
+
+.controls__arrow-down--up {
+    transform: rotate(90deg);
+}
+
+.controls__arrow-down--down {
+    transform: rotate(-90deg);
+}

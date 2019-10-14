@@ -10,7 +10,7 @@ html(lang="en")
   body
     .wrapper
       .welcome-section
-        section.hero
+        section.hero#hero
           .container.hero__container
             header.hero__header
               .hero__logo
@@ -41,7 +41,7 @@ html(lang="en")
                 a.arrow-scroll
                   +icon('scroll', 'scroll-down')
 
-        section.about
+        section.about#about
           .container.about__container
             .about__left
               .user
@@ -75,7 +75,7 @@ html(lang="en")
           polygon(points="0,100 1000,100 1000,0")
 
 
-      section.values 
+      section.values#values 
         .container.values__container
           .values__title
             h2.section-title.values__title-text Чем я могу быть вам полезен
@@ -96,38 +96,51 @@ html(lang="en")
                     .skill
                       svg(viewBox="0 0 200 200" preserveAspectRatio="none").skill__shape
                         circle(r="80" cx="100" cy="100").skill__circle.skill__circle--position--under
-                        circle(r="80" cx="100" cy="100").skill__circle.skill__circle--position--above
-                        linear-gradient()
+                        circle(r="80" cx="100" cy="100" stroke="url(#gradient)").skill__circle.skill__circle--position--above
+                        linearGradient(id="gradient" x1="0%" y1="0%" x2="100%" y2="0")
+                          stop(offset="0%" stop-color='#9300e8')
+                          stop(offset="100%" stop-color='#4a00ed')
                       .skill__title #{skill} 
 
-      section.works
+      section.works#works
         .container
           h2.section-title.works__title Мои работы
           .works__content
             .works__left
-              .slider
-                +image('content/slider.png', 'slider__fillpic')
-                //- .slider__preview
-                //-   ul.previews
-                //-       - for (var i = 0; i < 3; i++)
-                //-       li.previews__item
-                //-         img.previews__pic
-                //-   .slider__buttons
-                //-     .slider-button
-                //-       button.slider-buttons__item.slider-buttons__item--slide--prev
-                //-       button.slider-buttons__item.slider-buttons__item--slide--next
-
+              .works__slider.slider
+                .slider__preview
+                  +image('content/slider.png', 'slider__fillpic')
+                .slider__thumbnails
+                  +image('content/thumbnails.png', 'slider__img')
+                .slider__controls
+                  ul.controls
+                    li.controls__item
+                      button.controls__button
+                        +icon('arrow-down', 'controls__arrow-down controls__arrow-down--up' )
+                    li.controls__item
+                      button.controls__button
+                        +icon('arrow-down', 'controls__arrow-down controls__arrow-down--down')
+                
             .works__right
               .works__tags
-                - var tags = ['HTML', 'CSS', 'Javsscript']
+                - var tags = ['HTML', 'CSS', 'Javascript']
                 each tag in tags
                   ul.tags
                     li.tags__item #{tag}
               .works__text
-                h3.works__title Сайт школы образования
-                  .works__desc-text
-                    p Этот парень проходил обучение веб-разработке не где-то, а в LoftSchool! 2 месяца только самых тяжелых испытаний и бессонных ночей!
-                  a.iconed-link(href="#")
-                    +icon("link", "iconed-link__icon")
-                    .iconed-link__text Посмотреть сайт
+                h3.works__subtitle Сайт школы образования
+                .works__desc-text
+                  p Этот парень проходил обучение веб-разработке не где-то, а в LoftSchool! 2 месяца только самых тяжелых испытаний и бессонных ночей!
+                a.iconed-link(href="#")
+                  +icon("link", "iconed-link__icon")
+                  span.iconed-link__text Посмотреть сайт
+      .triangles
+        svg.triangles__item(viewBox="0 0 1000 100" preserveAspectRatio="none")
+          polygon(points="0,0 0,100 1000,100")
+        svg.triangles__item(viewBox="0 0 1000 100" preserveAspectRatio="none")
+          polygon(points="0,100 1000,100 1000,0")
+      
+      section.recommendation
+        .container
+
 
