@@ -68,7 +68,7 @@ html(lang="en")
                   p Этот сайт я сделал в рамках обучения в Школе онлайн образования LoftSchool. Чуть позже я освежу в нём свой контент. А пока посмотрите, как тут всё классно и красиво!
                   .about__asterisk *
 
-      .triangles
+      .triangles.triangles__margin-top
         svg.triangles__item(viewBox="0 0 1000 100" preserveAspectRatio="none")
           polygon(points="0,0 0,100 1000,100")
         svg.triangles__item(viewBox="0 0 1000 100" preserveAspectRatio="none")
@@ -116,11 +116,11 @@ html(lang="en")
                   ul.controls
                     li.controls__item
                       button.controls__button
-                        +icon('arrow-down', 'controls__arrow-down controls__arrow-down--up' )
+                        +icon('arrow-down', 'works-controls__arrow-down controls__arrow-down--up' )
                     li.controls__item
                       button.controls__button
-                        +icon('arrow-down', 'controls__arrow-down controls__arrow-down--down')
-                
+                        +icon('arrow-down', 'works-controls__arrow-down controls__arrow-down--down')
+                .slider__number 1
             .works__right
               .works__tags
                 - var tags = ['HTML', 'CSS', 'Javascript']
@@ -134,13 +134,108 @@ html(lang="en")
                 a.iconed-link(href="#")
                   +icon("link", "iconed-link__icon")
                   span.iconed-link__text Посмотреть сайт
-      .triangles
+      .triangles.triangles__margin-bottom
         svg.triangles__item(viewBox="0 0 1000 100" preserveAspectRatio="none")
-          polygon(points="0,0 0,100 1000,100")
+          polygon(points="0,0 1000,0 0,100")
         svg.triangles__item(viewBox="0 0 1000 100" preserveAspectRatio="none")
-          polygon(points="0,100 1000,100 1000,0")
+          polygon(points="1000,0 0,0 1000,100")
       
-      section.recommendation
-        .container
-
-
+      .recommendation
+        .container.recommendation__container
+          section.reviews#reviews
+            .reviews__header
+              h2.section-title.reviews__section-title Что обо мне говорят
+              .reviews__control
+                  ul.controls
+                    li.controls__item.controls--circle
+                      button.controls__button
+                        +icon('arrow-down', 'reviews-controls__arrow-down controls__arrow-down--prev' )
+                    li.controls__item.controls--circle
+                      button.controls__button
+                        +icon('arrow-down', 'reviews-controls__arrow-down controls__arrow-down--next')
+            .reviews-slider
+              ul.reviews-slider__list
+                li.reviews-slider__item
+                  .reviews-slider__icon: +icon('quote', 'reviews__icon-quote')
+                  .reviews-slider__content
+                    .reviews-slider__text
+                      p Этот парень проходил обучение веб-разработке не где-то, а в LoftSchool! 4,5 месяца только самых тяжелых испытаний и бессонных ночей!
+                    .reviews-slider__user
+                      .reviews-slider__author-image
+                        +image('content/review-user_1.png', 'reviews-slider__avatar')
+                      .reviews-slider__author-info
+                        .reviews-slider__author-name Ковальчук Дмитрий
+                        .reviews-slider__author-profession Основатель Loftschool
+                li.reviews-slider__item
+                  .reviews-slider__icon: +icon('quote', 'reviews__icon-quote')
+                  .reviews-slider__content
+                    .reviews-slider__text
+                      p Этот код выдержит любые испытания. Только пожалуйста, не загружайте сайт на слишком старых браузерах
+                    .reviews-slider__user
+                      .reviews-slider__author-image
+                        +image('content/review-user_2.png', 'reviews-slider__avatar')
+                      .reviews-slider__author-info
+                        .reviews-slider__author-name Владимир Сабанцев
+                        .reviews-slider__author-profession Преподаватель
+          section.feedback#feedback
+            h2.section-title.feedback__section-title Связаться со мной
+            form.form
+              .form__wrapper
+                .form__row
+                  .form__block
+                    label.form__label(for="form_name")
+                      span.form__block-name Введите ваше имя
+                      .form__input-wrapper
+                        .form__icon
+                          +icon('user', 'form__icon-user')
+                        input(type="text", name="name", placeholder="Ковальчук Дмитрий", id="form_name", class="form__input")
+                  .form__block
+                    label.form__label(for="form_email")
+                      span.form__block-name Введите ваш email
+                      .form__input-wrapper
+                        .form__icon
+                          +icon('envelope', 'form__icon-user')
+                        input(type="email", name="email", placeholder="loftschool@study.com", id="form_email", class="form__input")
+                .form__row
+                  .form__block-textarea
+                    label.form__label(for="form_message")
+                      span.form__block-name Сообщение к письму
+                      .form__input-wrapper
+                        .form__icon
+                          +icon('message', 'form__icon-user')
+                        textarea(name="message", placeholder="Требуется ваша помощь в создании сайта. Интересуют сроки и цена вопроса", id="form_message", class="form__textarea")
+                .feedback__button
+                  button(type="button", class="btn btn--feedback")
+                    .btn__text Отправить
+      footer.footer
+        .container.footer__container
+          .footer__copyright-and-author
+            .footer__coperight &#169 2019
+            .footer__author
+              .footer__author-name Владимир Старов
+              .footer__author-desc Личный сайт <br>веб разработчика
+          .footer__navigation-and-content
+            .footer__menu
+              nav.nav
+                - var menu = ['Главная', 'Обо мне', 'Навыки', 'Работы', 'Отзывы', 'Связаться',]
+                ul.nav__list
+                  each item in menu  
+                    li.nav__item
+                      a(href="#").nav__link #{item}
+            .footer__content
+              .footer__about-and-socials
+                .footer__about
+                  p Этот сайт я сделал в рамках обучения в Школе онлайн образования Loftschool
+                .footer__links
+                  - var icons = ['insta', 'vk', 'github']
+                  ul.socials.footer__socials
+                    each item in icons
+                      li.socials__item
+                        a(href="#" target="_blank").socials__link
+                          +icon(`${item}`, 'socials__icon')
+              .footer__quote
+                .quote
+                  .quote__text
+                    p Всегда пишите код так, будто сопровождать его будет склонный к насилию психопат, который знает где вы живете
+                  .quote__author Martin Golding
+          

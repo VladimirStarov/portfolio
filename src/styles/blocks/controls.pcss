@@ -2,24 +2,18 @@
     display: flex;
 }
 
-.controls__button {
+.slider .controls__button {
     width: 50px;
     height: 50px;
     background-color: #353e4e;
     cursor: default;
 }
 
-.controls__arrow-down {
-    width: 10px;
-    height: 8px;
-    fill: #5c6876;
-    cursor: pointer;
-
-    &:hover {
-        fill: #fff;
-    }
+.reviews__control .controls__button {
+    background-color: transparent;
+    width: 50px;
+    height: 50px;
 }
-
 
 .controls__arrow-down--up {
     transform: rotate(90deg);
@@ -27,4 +21,17 @@
 
 .controls__arrow-down--down {
     transform: rotate(-90deg);
+}
+
+.controls--circle {
+    border: 1px solid #353e4e;
+    border-radius: 50px;
+    
+    &:first-child {
+        margin-right: 30px;
+    }
+}
+
+.controls__arrow-down--prev {
+    transform: rotate(-180deg);
 }
