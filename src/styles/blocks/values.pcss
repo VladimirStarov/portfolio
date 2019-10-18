@@ -22,6 +22,10 @@
             left: 27%;
             top: inherit;
         }
+
+        @include phones {
+            bottom: 180px;
+        }
     }
 
     @include tablets {
@@ -49,13 +53,18 @@
 
 }
 .values__title {
-    width: 585px;
+    padding-right: 25%;
     margin-bottom: 90px;
 
     @include tablets {
         text-align: center;
         padding: 0 65px;
         margin-bottom: 60px;
+    }
+
+    @include phones {
+        padding: 0;
+        text-align: start;
     }
 }
 .values__title-text {

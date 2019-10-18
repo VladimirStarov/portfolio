@@ -8,6 +8,10 @@
     display: flex;
     width: 100%;
     justify-content: space-between;
+
+    @include phones {
+        flex-direction: column;
+    }
 }
 
 .form__block {
@@ -23,6 +27,10 @@
 
 .form__label {
     padding-left: 50px;
+
+    @include phones {
+        padding-left: 0;
+    }
 }
 
 .form__input-wrapper {
@@ -49,6 +57,10 @@
 .form__icon {
     display: flex;
     margin-right: 20px;
+
+    @include phones {
+        display: none;
+    }
 }
 
 .form__icon-user {
@@ -66,6 +78,10 @@
     font-size: 18px;
     font-weight: 700;
     line-height: 48px;
+
+    @include phones {
+        text-align: center;
+    }
 }
 
 .form__textarea {

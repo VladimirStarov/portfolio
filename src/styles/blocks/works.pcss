@@ -2,6 +2,12 @@
     padding: 10% 0;
 }
 
+.works__container {
+    @media screen and (max-width: 690px) {
+    width: 100%;
+}
+}
+
 .works__title {
     margin-bottom: 90px;
 }
@@ -15,7 +21,7 @@
 }
 
 .works__left {
-     width: 977px;
+     width: 50%;
      margin-right: 150px;
 
      @include desktop {
@@ -23,7 +29,7 @@
      }
 
      @include tablets {
-         width: 626px;
+         width: 100%;
          margin-bottom: 100px;
          margin-right: 0;
      }
@@ -45,11 +51,15 @@
 }
 
 .works__right {
-    width: 341px;
+    width: 50%;
 
     @include tablets {
-        width: 438px;
+        width: 70%;
         text-align: center;
+
+        @include phones {
+            width: 80%;
+        }
     }
 }
 
@@ -59,6 +69,10 @@
     @include tablets {
         justify-content: center;
     }
+}
+
+.works__text {
+    text-align: start;
 }
 
 .works__subtitle {

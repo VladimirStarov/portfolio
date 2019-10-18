@@ -27,13 +27,17 @@
     }
 }
 
-.hero__link-and-hamburger {
+.hero__links-and-hamburger {
     display: flex;
 }
 
 .hero__links {
     @include tablets {
         margin-right: 90px;
+    }
+
+    @include phones {
+        display: none;
     }
 }
 

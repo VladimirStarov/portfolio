@@ -2,15 +2,24 @@
     display: flex;
     justify-content: center;
     padding: 140px 0;
+
+    @include phones {
+        flex-direction: column;
+        padding: 0;
+    }
 }
 
 .about__left {
-    width: 334px;
     margin-right: 30px;
+
+    @include phones {
+        margin-right: 0;
+        margin-bottom: 40px;
+    }
 }
 
 .about__right {
-    width: 581px;
+    padding: 0 10%;
 }
 
 .about__prolog {

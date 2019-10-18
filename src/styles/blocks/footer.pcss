@@ -5,6 +5,10 @@
 
 .footer__container {
     display: flex;
+
+    @include phones {
+        flex-direction: column;
+    }
 }
 
 .footer__copyright-and-author {
@@ -14,6 +18,11 @@
     @include desktop {
         flex-direction: column;
         margin-right: 50px;
+    }
+
+    @include phones {
+        margin-right: 0;
+        margin-bottom: 40px;
     }
 }
 
@@ -53,6 +62,10 @@
 .footer__menu {
     margin-bottom: 60px;
     color: #ffffff;
+
+    @include phones {
+        margin-bottom: 20px;
+    }
 }
 
 .footer__content {
