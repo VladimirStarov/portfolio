@@ -1,15 +1,29 @@
 .user-info {
     text-align: center;
+
+    @include desktop {
+        display: flex;
+    }
 }
 .user-info__desc {
     opacity: .4;
     font-weight: 600;
     font-size: 18px;
     line-height: 1.8;
+
+    @include desktop {
+        margin-right: 60px;
+        text-align: end;
+        line-height: 30px;
+    }
 }
 
 .user-info__username {
     font-size: 72px;
     font-weight: 800;
-    line-height: 1;
+    line-height: 60px;
+
+    @include desktop {
+        text-align: start;
+    }
 }
