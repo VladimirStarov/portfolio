@@ -4,6 +4,10 @@
     @include desktop {
         display: flex;
     }
+
+    @include tablets {
+        flex-direction: column;
+    }
 }
 .user-info__desc {
     opacity: .4;
@@ -16,6 +20,12 @@
         text-align: end;
         line-height: 30px;
     }
+
+    @include tablets {
+        margin-right: 0;
+        text-align: center;
+        margin-bottom: 30px;
+    }
 }
 
 .user-info__username {
@@ -25,5 +35,10 @@
 
     @include desktop {
         text-align: start;
+    }
+
+    @include tablets {
+        text-align: center;
+        font-size: 48px;
     }
 }

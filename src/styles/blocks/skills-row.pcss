@@ -5,6 +5,10 @@
 }
 .skills-row__list {
     display: flex;
+
+    @include tablets {
+        flex-wrap: wrap;
+    }
 }
 
 .skills-row__item {
@@ -14,5 +18,9 @@
 
     @include desktop {
         margin-right: 30px;
+    }
+
+    @include tablets {
+        margin-right: 15px;
     }
 }

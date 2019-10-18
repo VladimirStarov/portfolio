@@ -7,6 +7,11 @@
 }
 .works__content {
     display: flex;
+
+    @include tablets {
+        flex-direction: column;
+        align-items: center;
+    }
 }
 
 .works__left {
@@ -15,6 +20,12 @@
 
      @include desktop {
          margin-right: 100px;
+     }
+
+     @include tablets {
+         width: 626px;
+         margin-bottom: 100px;
+         margin-right: 0;
      }
 }
 
@@ -35,10 +46,19 @@
 
 .works__right {
     width: 341px;
+
+    @include tablets {
+        width: 438px;
+        text-align: center;
+    }
 }
 
 .works__tags {
     display: flex;
+
+    @include tablets {
+        justify-content: center;
+    }
 }
 
 .works__subtitle {

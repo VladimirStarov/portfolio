@@ -1,6 +1,10 @@
 .reviews-slider__list {
     display: flex;
-    width: 950px;
+    padding-right: 15%;
+
+    @include tablets {
+        padding-right: 0;
+    }
 }
 
 .reviews-slider__item {
@@ -14,13 +18,10 @@
 
 .reviews-slider__icon {
     margin-right: 20px;
-}
 
-.reviews__icon-quote {
-    width: 75px;
-    height: 63px;
-    fill: #464d62;
-    opacity: .05;
+    @include tablets {
+        margin-right: 5px;
+    }
 }
 
 .reviews-slider__text {
@@ -43,6 +44,11 @@
     border-radius: 50%;
     overflow: hidden;
     margin-right: 30px;
+
+    @include tablets {
+        margin-right: 10px;
+        height: 73px;
+    }
 }
 
 .reviews-slider__author-name {

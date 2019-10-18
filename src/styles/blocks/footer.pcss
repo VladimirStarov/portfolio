@@ -57,6 +57,10 @@
 
 .footer__content {
     display: flex;
+
+    @include tablets {
+        flex-direction: column;
+    }
 }
 
 .footer__about-and-socials {
@@ -72,6 +76,12 @@
     opacity: 0.3;
     color: #ffffff;
     line-height: 30px;
+}
+
+.footer__links {
+    @include tablets {
+        margin-bottom: 30px;
+    }
 }
 
 .footer__socials .socials__item {

@@ -13,10 +13,36 @@
     align-items: center;
     justify-content: space-between;
     padding-top: 60px;
+
+    @include tablets {
+        margin-bottom: 180px;
+    }
 }
 
 .hero__menu {
     margin: 0 20px;
+
+    @include tablets {
+        display: none;
+    }
+}
+
+.hero__link-and-hamburger {
+    display: flex;
+}
+
+.hero__links {
+    @include tablets {
+        margin-right: 90px;
+    }
+}
+
+.hero__hamburger {
+    display: none;
+
+    @include tablets {
+        display: flex;
+    }
 }
 
 .hero__content {
@@ -24,6 +50,10 @@
     display: flex;
     align-items: center;
     justify-content: center;
+
+    @include tablets {
+        align-items: baseline;
+    }    
 }
 
 .hero__btns {
@@ -34,6 +64,10 @@
     @include desktop {
         flex: 1;
         padding: 0 0 40px;
+    }
+
+    @include tablets {
+        display: none;
     }
 }
 

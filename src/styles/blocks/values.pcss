@@ -13,6 +13,20 @@
         @include desktop {
             left: -170px;
         }
+
+        @include tablets {
+            width: 316px;
+            height: 281px;
+            background-size: cover;
+            bottom: 110px;
+            left: 27%;
+            top: inherit;
+        }
+    }
+
+    @include tablets {
+        padding-top: 100px;
+        padding-bottom: 450px;
     }
 }
 
@@ -27,14 +41,30 @@
         padding-left: 350px;
     }
 
+    @include tablets {
+        padding: 0;
+        margin-bottom: 0;
+        align-items: center;
+    }
+
 }
 .values__title {
     width: 585px;
     margin-bottom: 90px;
+
+    @include tablets {
+        text-align: center;
+        padding: 0 65px;
+        margin-bottom: 60px;
+    }
 }
 .values__title-text {
     font-size: 30px;
     margin-bottom: 55px;
+
+    @include tablets {
+        margin-bottom: 30px;
+    }
 }
 
 .values__desc {
@@ -47,4 +77,8 @@
     display: flex;
     flex-direction: column;
     align-items: flex-end;
+
+    @include tablets {
+        text-align: center;
+    }
 }

@@ -22,14 +22,21 @@ html(lang="en")
                     each item in menu  
                       li.nav__item
                         a(href="#").nav__link #{item}
-              
-              .hero__links
-                - var icons = ['insta', 'vk', 'github']
-                ul.socials
-                  each item in icons
-                    li.socials__item
-                      a(href="#" target="_blank").socials__link
-                        +icon(`${item}`, 'socials__icon')
+              .hero__link-and-hamburger
+                .hero__links
+                  - var icons = ['insta', 'vk', 'github']
+                  ul.socials
+                    each item in icons
+                      li.socials__item
+                        a(href="#" target="_blank").socials__link
+                          +icon(`${item}`, 'socials__icon')
+                
+                .hero__hamburger
+                  .hamburger
+                    a(href="#").hamburger__link
+                      span.hamburger__line
+                      span.hamburger__line
+                      span.hamburger__line
             
             .hero__content
               .user-info
