@@ -1,9 +1,15 @@
+.about {
+    @media screen and (max-width: 600px) {
+        padding-bottom: 200px;
+    }
+}
 .about__container {
+    max-width: 958px;
     display: flex;
     justify-content: center;
     padding: 140px 0;
 
-    @include phones {
+    @media screen and (max-width: 600px) {
         flex-direction: column;
         padding: 0;
     }
@@ -12,7 +18,7 @@
 .about__left {
     margin-right: 30px;
 
-    @include phones {
+    @media screen and (max-width: 600px) {
         margin-right: 0;
         margin-bottom: 40px;
     }
@@ -20,6 +26,10 @@
 
 .about__right {
     padding: 0 10%;
+
+    @include tablets {
+        padding: 0;
+    }
 }
 
 .about__prolog {

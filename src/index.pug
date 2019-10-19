@@ -116,9 +116,15 @@ html(lang="en")
             .works__left
               .works__slider.slider
                 .slider__preview
-                  +image('content/slider.png', 'slider__fillpic')
-                .slider__thumbnails
-                  +image('content/thumbnails.png', 'slider__img')
+                  +image('slider/1.jpg', 'slider__fillpic')
+                .slider__thumbnails.thumbnalist
+                  ul.thumbnails__list
+                    li.thumbnails__item
+                      +image('slider/1.jpg', 'thumbnails__icon')
+                    li.thumbnails__item
+                      +image('slider/2.jpg', 'thumbnails__icon')
+                    li.thumbnails__item
+                      +image('slider/3.jpg', 'thumbnails__icon')
                 .slider__controls
                   ul.controls
                     li.controls__item

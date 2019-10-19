@@ -5,9 +5,9 @@
 }
 .skills-row__list {
     display: flex;
+    flex-wrap: wrap;
 
     @include tablets {
-        flex-wrap: wrap;
         justify-content: center;
     }
 }
@@ -17,6 +17,10 @@
     margin-right: 60px;
     text-align: center;
 
+    @media screen and (max-width: 1500px) {
+        margin-right: 32px;
+    }
+    
     @include desktop {
         margin-right: 30px;
     }
