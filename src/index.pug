@@ -10,6 +10,22 @@ html(lang="en")
   body
     .wrapper
       .welcome-section
+        .parallax
+          .parallax__layer(data-speed="0.1")
+            +image('parallax/1_1800.jpg', 'parallax__image')
+          .parallax__layer(data-speed="0.13")
+            +image('parallax/2_1800.png', 'parallax__image')
+          .parallax__layer(data-speed="0.2")
+            +image('parallax/3_1800.png', 'parallax__image')
+          .parallax__layer(data-speed="0.18")
+            +image('parallax/4_1800.png', 'parallax__image')
+          .parallax__layer(data-speed="0.23")
+            +image('parallax/5_1800.png', 'parallax__image')
+          .parallax__layer(data-speed="0.25")
+            +image('parallax/6_1800.png', 'parallax__image')
+          .parallax__layer(data-speed="0.28")
+            +image('parallax/7_1800.png', 'parallax__image')
+          
         section.hero#hero
           .container.hero__container
             header.hero__header
@@ -155,6 +171,20 @@ html(lang="en")
           polygon(points="1000,0 0,100 0,0")
       
       .recommendation
+        .parallax.parallax-budda
+          .parallax-budda__layer(data-speed="0.1")
+            +image('parallax/budda_1.jpg', 'parallax-budda__image')
+          .parallax-budda__layer(data-speed="0.14")
+            +image('parallax/budda_2.png', 'parallax-budda__image')
+          .parallax-budda__layer(data-speed="0.16")
+            +image('parallax/budda_3.png', 'parallax-budda__image')
+          .parallax-budda__layer(data-speed="0.2")
+            +image('parallax/budda_4.png', 'parallax-budda__image')
+          .parallax-budda__layer(data-speed="0.24")
+            +image('parallax/budda_5.png', 'parallax-budda__image')
+          .parallax-budda__layer(data-speed="0.26")
+            +image('parallax/budda_6.png', 'parallax-budda__image')
+            
         .container.recommendation__container
           section.reviews#reviews
             .reviews__header
@@ -230,7 +260,7 @@ html(lang="en")
               .footer__author-desc Личный сайт <br>веб разработчика
           .footer__navigation-and-content
             .footer__menu
-              nav.nav
+              .nav
                 - var menu = ['Главная', 'Обо мне', 'Навыки', 'Работы', 'Отзывы', 'Связаться',]
                 ul.nav__list
                   each item in menu  
