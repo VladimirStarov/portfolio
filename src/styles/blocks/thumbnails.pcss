@@ -2,6 +2,7 @@
     position: relative;
     flex-shrink: 0;
     width: 178px;
+    cursor: pointer;
     
     &::after {
         content: "";
@@ -12,4 +13,8 @@
         left: 0;
         border: 3px solid transparent;
     }
+}
+
+.thumbnails__item_active::after, .thumbnails__item:hover::after {
+    border-color: #f29400;
 }

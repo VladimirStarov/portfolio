@@ -109,41 +109,7 @@ html(lang="en")
       section.works#works
         .container.works__container
           h2.section-title.works__title Мои работы
-          .works__content
-            .works__left
-              .works__slider.slider
-                .slider__preview
-                  +image('slider/1.jpg', 'slider__fillpic')
-                .slider__thumbnails.thumbnalist
-                  ul.thumbnails__list
-                    li.thumbnails__item
-                      +image('slider/1.jpg', 'thumbnails__icon')
-                    li.thumbnails__item
-                      +image('slider/2.jpg', 'thumbnails__icon')
-                    li.thumbnails__item
-                      +image('slider/3.jpg', 'thumbnails__icon')
-                .slider__controls
-                  ul.controls
-                    li.controls__item
-                      button.controls__button
-                        +icon('arrow-down', 'works-controls__arrow-down controls__arrow-down--up' )
-                    li.controls__item
-                      button.controls__button
-                        +icon('arrow-down', 'works-controls__arrow-down controls__arrow-down--down')
-                .slider__number 1
-            .works__right
-              .works__tags
-                - var tags = ['HTML', 'CSS', 'Javascript']
-                each tag in tags
-                  ul.tags
-                    li.tags__item #{tag}
-              .works__text
-                h3.works__subtitle Сайт школы образования
-                .works__desc-text
-                  p Этот парень проходил обучение веб-разработке не где-то, а в LoftSchool! 2 месяца только самых тяжелых испытаний и бессонных ночей!
-                a.iconed-link(href="#")
-                  +icon("link", "iconed-link__icon")
-                  span.iconed-link__text Посмотреть сайт
+          #slider-component
       
       .triangles.triangles__margin-bottom
         svg.triangles__item(viewBox="0 0 1000 100" preserveAspectRatio="none")
