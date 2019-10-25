@@ -76,7 +76,6 @@ new Vue({
                     this.currentIndex--;
                     break;
             }
-            console.log(direction);
         }
     },
     created() {

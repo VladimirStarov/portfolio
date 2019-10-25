@@ -137,37 +137,16 @@ html(lang="en")
             .reviews__header
               h2.reviews__section-title Что обо мне говорят
               .reviews__control
-                  ul.controls
-                    li.controls__item.controls--circle
-                      button.controls__button
-                        +icon('arrow-down', 'reviews-controls__arrow-down controls__arrow-down--prev' )
-                    li.controls__item.controls--circle
-                      button.controls__button
-                        +icon('arrow-down', 'reviews-controls__arrow-down controls__arrow-down--next')
-            .reviews-slider
-              ul.reviews-slider__list
-                li.reviews-slider__item
-                  .reviews-slider__icon: +icon('quote', 'reviews__icon-quote')
-                  .reviews-slider__content
-                    .reviews-slider__text
-                      p Этот парень проходил обучение веб-разработке не где-то, а в LoftSchool! 4,5 месяца только самых тяжелых испытаний и бессонных ночей!
-                    .reviews-slider__user
-                      .reviews-slider__author-image
-                        +image('content/review-user_1.png', 'reviews-slider__avatar')
-                      .reviews-slider__author-info
-                        .reviews-slider__author-name Ковальчук Дмитрий
-                        .reviews-slider__author-profession Основатель Loftschool
-                li.reviews-slider__item
-                  .reviews-slider__icon: +icon('quote', 'reviews__icon-quote')
-                  .reviews-slider__content
-                    .reviews-slider__text
-                      p Этот код выдержит любые испытания. Только пожалуйста, не загружайте сайт на слишком старых браузерах
-                    .reviews-slider__user
-                      .reviews-slider__author-image
-                        +image('content/review-user_2.png', 'reviews-slider__avatar')
-                      .reviews-slider__author-info
-                        .reviews-slider__author-name Владимир Сабанцев
-                        .reviews-slider__author-profession Преподаватель
+                ul.controls
+                  li.controls__item.controls--circle
+                    button.controls__button
+                      +icon('arrow-down', 'reviews-controls__arrow-down controls__arrow-down--prev' )
+                  li.controls__item.controls--circle
+                    button.controls__button
+                      +icon('arrow-down', 'reviews-controls__arrow-down controls__arrow-down--next')
+
+            #reviews-components
+
           section.feedback#feedback
             h2.section-title.feedback__section-title Связаться со мной
             form.form

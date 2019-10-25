@@ -6,6 +6,8 @@ if (process.env.NODE_ENV === "development") {
 import "./scripts/skills";
 import "./scripts/works";
 import "./scripts/parallax";
+import "./scripts/reviews";
+
 
 import Vue from 'vue';
 import VueScrollTo from 'vue-scrollto';

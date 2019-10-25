@@ -1,0 +1,21 @@
+script(type="text/x-template")#reviews-container
+    .reviews-slider
+        display(
+            :reviews="reviews"
+        )
+
+script(type="text/x-template")#reviews-display        
+    ul.reviews-slider__list
+        li.reviews-slider__item(
+            v-for="review in reviews"
+        )
+            .reviews-slider__icon: +icon('quote', 'reviews__icon-quote')
+            .reviews-slider__content
+                .reviews-slider__text
+                    p {{review.text}}
+                .reviews-slider__user
+                    .reviews-slider__author-image
+                        img(:scr="review.avatar" alt="").reviews-slider__avatar
+                    .reviews-slider__author-info
+                        .reviews-slider__author-name {{review.author}}
+                        .reviews-slider__author-profession  {{review.position}}
