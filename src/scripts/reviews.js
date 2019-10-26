@@ -1,9 +1,30 @@
 import Vue from "vue";
+import { Carousel, Slide } from 'vue-carousel';
+
+const EventBus = new Vue();
 
 const display = {
     template: "#reviews-display",
-    props:["reviews"]
-}
+    components: {
+        Carousel,
+        Slide
+    },
+    props:["reviews"],
+    mounted() {
+        EventBus.$on('slide', direction => {
+            console.log('clicked', direction);
+
+            switch (direction) {
+                case "prev" : 
+                    document.querySelector('.VueCarousel-navigation-prev').click();
+                    break;
+                case "next":
+                    document.querySelector('.VueCarousel-navigation-next').click();
+                    break;
+            }
+        })
+    }
+};
 
 new Vue({
     el: "#reviews-components",
@@ -15,12 +36,16 @@ new Vue({
     methods: {
         makeArrWithRequiredImages(data) {
             return data.map(item => {
-                const requiredAva = require(`../images/avatar/${item.avatar}`);
-                item.avatar = requiredAva;
+                const requiredPic = require(`../images/ava/${item.avatar}`);
+                item.avatar = requiredPic;
                 return item
             }); 
+        },
+        slide(direction) {
+            EventBus.$emit('slide', direction)
         }
     },
+    
     created() {
         const data = require('../data/reviews.json');
         this.reviews = this.makeArrWithRequiredImages(data);

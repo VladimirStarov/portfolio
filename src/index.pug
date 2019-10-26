@@ -32,12 +32,7 @@ html(lang="en")
               .hero__logo
                 .logo BC
               .hero__menu
-                nav.nav
-                  - var menu = ['Главная', 'Обо мне', 'Навыки', 'Работы', 'Отзывы', 'Связаться',]
-                  ul.nav__list
-                    each item in menu  
-                      li.nav__item
-                        a(href="#").nav__link #{item}
+                
               .hero__links-and-hamburger
                 .hero__links
                   - var icons = ['insta', 'vk', 'github']
@@ -60,9 +55,9 @@ html(lang="en")
                 .user-info__username Владимир <br>Старов
             
             .hero__btns
-              .scroll-down-btns.hero__btns-down Скролл
-                a(href="#about").arrow-scroll
-                  +icon('scroll', 'scroll-down')
+              a(href="#about").arrow-scroll
+                .scroll-down-btns.hero__btns-down Скролл
+                +icon('scroll', 'scroll-down')
 
         section.about#about
           .container.about__container
@@ -106,7 +101,7 @@ html(lang="en")
               p Этот сайт я сделал в рамках обучения в Школе онлайн образования LoftSchool. Чуть позже я освежу в нём свой контент. А пока посмотрите, как тут всё классно и красиво!
           #skills-component 
 
-      section.works#works
+      section.works#worksMy
         .container.works__container
           h2.section-title.works__title Мои работы
           #slider-component
@@ -134,19 +129,8 @@ html(lang="en")
 
         .container.recommendation__container
           section.reviews#reviews
-            .reviews__header
-              h2.reviews__section-title Что обо мне говорят
-              .reviews__control
-                ul.controls
-                  li.controls__item.controls--circle
-                    button.controls__button
-                      +icon('arrow-down', 'reviews-controls__arrow-down controls__arrow-down--prev' )
-                  li.controls__item.controls--circle
-                    button.controls__button
-                      +icon('arrow-down', 'reviews-controls__arrow-down controls__arrow-down--next')
-
             #reviews-components
-
+            
           section.feedback#feedback
             h2.section-title.feedback__section-title Связаться со мной
             form.form

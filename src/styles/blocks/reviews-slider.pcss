@@ -1,19 +1,17 @@
 .reviews-slider__list {
     display: flex;
-    padding-right: 15%;
     overflow: hidden;
-
-    @include tablets {
-        padding-right: 0;
-    }
+    max-width: 945px;
 }
 
 .reviews-slider__item {
     width: 50%;
     display: flex;
+    flex-shrink: 0;
+    padding-right: 60px;
 
-    &:first-child {
-        margin-right: 80px;
+    &:last-child {
+        padding-right: 0;
     }
 
     @media screen and (max-width: 580px) {

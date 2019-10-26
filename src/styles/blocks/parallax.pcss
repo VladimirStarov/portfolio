@@ -1,11 +1,16 @@
 .parallax {
     position: absolute;
     overflow: hidden;
-    top: 0;
     bottom: 0;
-    left: 0;
-    right: 0;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    min-width: 1800px;
     z-index: -1;
+
+    @include tablets {
+        display: none;
+      }
 }
 
 .parallax__layer {
@@ -49,7 +54,7 @@
 
     &:nth-child(5) {
         .parallax__image {
-            left: -340px;
+            left: -5%;
             top: 25%;
         }
     }
@@ -63,7 +68,7 @@
 
     &:nth-child(7) {
         .parallax__image {
-            bottom: -40%;
+            bottom: -65%;
             left: -80%;
             width: 100%;
             max-width: 300%;
