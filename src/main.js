@@ -12,3 +12,4 @@ import "./scripts/parallax";
 import "./scripts/reviews";
 import "./scripts/scroll-to";
 import "./scripts/menu";
+import "./scripts/popup-menu";
