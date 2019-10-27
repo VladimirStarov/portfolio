@@ -39,6 +39,7 @@ script(type="text/x-template")#slider-thumbs
         ul.thumbnails__list
             li.thumbnails__item(
                 v-for="work in reversedWorks"
+                @click.prevent="$emit('slide', 'down')"
                 :key="work.id"
                 :class="{thumbnails__item_active: work.id == currentWork.id}"
             )

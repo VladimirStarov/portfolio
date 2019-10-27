@@ -4,17 +4,17 @@
 
 .triangles__margin-top {
     margin-top: -130px;
+
+    @include tablets {
+        margin-top: -50px;
+    }
 }
 
 .triangles__margin-bottom {
     margin-bottom: -130px;
 
-    @media screen and (max-width: 1199px) {
-        margin-bottom: -130px;
-    }
-
-    @include phones {
-        margin-bottom: -130px;
+    @include tablets {
+        margin-bottom: -50px;
     }
 }
 
@@ -23,4 +23,8 @@
     display: block;
     height: 130px;
     fill: white;
+
+    @include tablets {
+        height: 50px;
+    }
 }
