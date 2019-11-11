@@ -1,45 +1,27 @@
 .reviews {
-    margin-bottom: 200px;
-}
-
-.reviews__header {
-    display: flex;
-    align-items: center;
-    margin-bottom: 90px;
-
-    @media screen and (max-width: 580px) {
+    padding: 255px 0 90px;
+    z-index: 1;
+    @include phones {
+      padding-top: 100px;
+      padding-bottom: 70px;
+    }
+  
+    &__header {
+      display: flex;
+      align-items: center;
+      margin-bottom: 90px;
+      @include tablets {
         flex-direction: column;
-        margin-bottom: 20px;
+        margin-bottom: 30px;
+      }
     }
-}
-
-.reviews__section-title {
-    font-weight: 700;
-    margin-right: 120px;
-    margin-bottom: 25px;
-
-    @media screen and (max-width: 580px) {
+  
+    &__title {
+      margin-bottom: 0;
+      margin-right: 94px;
+      @include tablets {
         margin-right: 0;
-        font-size: 24px;
-        line-height: 48px;
-
+        margin-bottom: 25px;
+      }
     }
-}
-
-.reviews-controls__arrow-down {
-    width: 8px;
-    height: 10px;
-    fill: #414c63;
-}
-
-.reviews__icon-quote {
-    width: 75px;
-    height: 63px;
-    fill: #464d62;
-    opacity: .05;
-
-    @include tablets {
-    width: 30px;
-    height: 26px;
-    }
-}
+  }

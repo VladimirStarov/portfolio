@@ -1,0 +1,16 @@
+-
+  var items = [
+    ['Проживаю', 'Новосибирск'],
+    ['Возраст', '32 лет'],
+    ['Родлся', '22 января 1987'],
+  ]
+
+mixin about_user()
+  .about-user
+    .about-user__avatar
+      +avatar("content/user.jpg")
+    ul.about-user__list
+      each item in items
+        li.about-user__item
+          .about-user__key #{item[0]}
+          .about-user__value #{item[1]}

@@ -1,0 +1,94 @@
+.root-container
+  section.works
+    .page__container
+      .page__header
+        .page__columns
+          h1.page-title.works__title Блок «Работы»
+      .page__content
+        .page__row
+          .card
+            .card__header
+              .card__column
+                .page-subtitle Редактирование работы
+            .card__content
+              form.edit-form.form--strong
+                .edit-form__column
+                  input(type="file", name="work-image")#upload-pic.edit-form__file
+                  .edit-form__row
+                    .edit-form__button
+                      button(type="button").btn
+                        label(for="upload-pic").btn.btn--link Изменить превью
+                  .edit-form__row
+                    .edit-form__frame
+                      .edit-form__info
+                        | Перетащите или загрузите для загрузки изображения
+                      .edit-form__button
+                        button(type="button").btn
+                          label(for="upload-pic").btn.btn--gradient ЗАГРУЗИТЬ
+                .edit-form__column
+                  .edit-form__row
+                    label.form__label(for="form_work-name")
+                      span.form__block-name Название
+                        .form__input-wrapper
+                          input(type="text", name="work-name", placeholder="Дизайн сайта для авто салона Porsche", id="form_work-name", required="required", class="form__input")
+                  .edit-form__row
+                    label.form__label(for="form_work-link")
+                      span.form__block-name Ссылка
+                        .form__input-wrapper
+                          input(type="text", name="work-link", placeholder="https://www.porsche-pulkovo.ru", required="required", id="form_work-link", class="form__input") 
+                  .edit-form__row
+                    label(for="form-work-desc").form__label Описание
+                      .form__input-wrappper
+                        textarea(name="work-desc", id="form-work-desc", placeholder="Порше Центр Пулково - является официальным дилером марки Порше в Санкт-Петербурге и предоставляет полный цикл услуг по продаже и сервисному обслуживанию автомобилей", required="required", class="form__textarea ")
+                  .edit-form__row
+                    label(for="form_work-tags").form__label Добавление тэга
+                    .form__input-wrap
+                      input(type="text", name="work-tags", id="form_work-tags", placeholder="Jquery, Vue.js, HTML5", required="required", class="form__input")
+                  .edit-form__row
+                    ul.tags
+                      li.tags__item
+                        .tag HTML 
+                      li.tags__item
+                        .tag CSS3
+                      li.tags__item
+                        .tag Javascript 
+                  .edit-form__row
+                    .controls.edit-form__btns
+                      .controls__btn
+                        button(type="reset").btn.btn--link Отмена
+                      .controls__btn
+                        button(type="submit").btn.btn--gradient Сохранить
+                        
+        .page__row
+          ul.works__list
+            li.works__item
+              .card.card--add
+                button(type="button").btn.btn--add.btn--xbig
+            each i in [1, 2, 3, 4]
+              li.works__item
+                .card.card--works
+                  .card__header
+                    img(src=`~images/admin/works/${i}.jpg`)
+                  .card__content
+                    .works__row
+                      h3.page-subtitle Сайт школы образования
+                    .works__row
+                      p
+                        | Этот парень проходил обучение веб-разработке не где-то,
+                        | а в LoftSchool! 4,5 месяца только самых тяжелых испытаний и бессонных ночей!
+                    .works__row
+                      a(href="#").btn.btn--link http://loftschool.ru
+                  .card__footer
+                    .controls
+                      .controls__btn
+                        button(type="button").btn
+                          .btn__column Править
+                          .btn__column
+                            svg(width="17" height="17").btn-icon--blue
+                              use(xlink:href="sprite.svg#pencil")
+                      .controls__btn
+                        button(type="button").btn
+                          .btn__column Удалить
+                          .btn__column
+                            svg(width="15" height="15").btn-icon--red
+                              use(xlink:href="sprite.svg#cross")

@@ -1,26 +1,86 @@
+/* Socials
+============================================================================================ */
 .socials {
+  &__list {
     display: flex;
     align-items: center;
-}
+  }
 
-.socials__item {
+  &__item {
     margin-right: 40px;
 
-    &:last-child {
-        margin-right: 0;
-    }
-
     @include desktop {
-        margin-right: 30px;
+      margin-right: 3.33333vw;
     }
-}
 
-.socials__icon {
-    width: 28px;
-    height: 25px;
+    &:last-child {
+      margin-right: 0;
+    }
+  }
+
+  &__link {
     display: block;
+    transition: border .5s ease-in;
+
+    &:hover {
+      .socials__icon {
+        fill: $links-active;
+      }
+    }
+  }
+
+  &__icon {
+    display: flex;
+    fill: #414b63;
+    height: 25px;
+    transition: fill .5s ease-in;
+
+    &--insta {
+      width: 25px;
+    }
+
+    &--vk {
+      width: 31px;
+    }
+
+    &--github {
+      width: 27px;
+    }
+  }
 }
 
-.socials__item:hover .socials__icon {
-    fill: #5500f2;
-} 
+.socials.socials--footer {
+  .socials {
+    &__item {
+      margin-right: 19px;
+    }
+
+    &__link {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      width: 50px;
+      height: 50px;
+      border-radius: 50%;
+      border: 1px solid rgba(#fff, .3);
+
+      &:hover {
+        border-color: $links-hover-footer;
+
+        .socials__icon {
+          fill: $links-hover-footer;
+        }
+      }
+    }
+
+    &__icon {
+      fill: rgba(#fff, .3);
+    }
+  }
+}
+
+.overlay {
+  .socials--header {
+    display: none;
+  }
+}

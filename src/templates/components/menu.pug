@@ -1,8 +1,0 @@
-script(type="text/x-template")#menu-templates
-    .hero__menu
-        nav.nav
-            ul.nav__list 
-                li.nav__item(v-for="link in links" :key="link.href")
-                    a(:href="link.href"
-                     target="_blank"
-                     v-scroll-to="link.href").nav__link {{link.text}}

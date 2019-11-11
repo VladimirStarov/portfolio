@@ -1,0 +1,40 @@
+/* Scroll button
+============================================================================================ */
+.scroll-down {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1;
+  color: $links-color;
+  text-decoration: none;
+
+  &:hover {
+    .scroll-down__text,
+    .scroll-down__icon {
+      color: $links-active;
+      fill: $links-active;
+    }
+  }
+
+  &__text {
+    display: flex;
+    color: inherit;
+    font-size: 18px;
+    font-weight: 600;
+    line-height: 30px;
+    margin-right: 9px;
+    margin-left: -5px;
+    transition: all .4s ease-in;
+  }
+
+  &__icon {
+    color: inherit;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 30px;
+    height: 30px;
+    fill: $links-color;
+    transition: all .4s ease-in;
+  }
+}

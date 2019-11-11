@@ -1,71 +1,94 @@
 .about {
-    z-index: 1;
-    
-    @media screen and (max-width: 600px) {
-        padding-bottom: 200px;
-    }
-}
-.about__container {
-    max-width: 958px;
+  width: 100%;
+  max-width: 965px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  @include tablets {
+    flex-direction: column;
+    width: 80%;
+  }
+
+  @include phones {
+    width: 100%;
+  }
+
+  &__section {
+    display: flex;
+    flex: 1;
+    padding: 100px 0 120px;
+    position: relative;
+    justify-content: center;
+    align-items: center;
+  }
+
+  &__container {
     display: flex;
     justify-content: center;
-    padding: 140px 0;
+  }
 
-    @media screen and (max-width: 600px) {
-        flex-direction: column;
-        padding: 0;
+  &__user-info {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    margin-right: 89px;
+    @include desktop {
+      margin-right: 9.2%;
     }
-}
-
-.about__left {
-    margin-right: 30px;
-
-    @media screen and (max-width: 600px) {
-        margin-right: 0;
-        margin-bottom: 40px;
+    @include tablets {
+      margin-right: 0;
+      margin-bottom: 30px;
     }
-}
+  }
 
-.about__right {
-    padding: 0 10%;
+  &__user-greeting {
+    color: rgba($links-color, .5);
+    font-size: 16px;
+    font-weight: 600;
+    line-height: 30px;
 
     @include tablets {
-        padding: 0;
+      font-size: 14px;
+      font-weight: 600;
+      line-height: 24px;
     }
-}
+  }
 
-.about__prolog {
-    opacity: .5;
-    font-weight: 600;
-    margin-bottom: 30px;
-}
+  &__prolog {
+    color: inherit;
+    font-size: inherit;
+    font-weight: inherit;
+    margin-bottom: 13px;
+  }
 
-.about__title {
-    font-size: 36px;
-    font-weight: 700;
-    margin-bottom: 38px;
-}
+  &__title {
+    margin-bottom: 28px;
+    @include phones {
+      line-height: 36px;
+    }
+  }
 
-.about__text {
-    opacity: .5;
-    line-height: 1.8;
-    margin-bottom: 70px;
-}
+  &__text {
+    margin-bottom: 92px;
+    @include tablets {
+      margin-bottom: 48px;
+    }
+  }
 
-.about__ps {
-    opacity: .5;
-    line-height: 1.8;
-    font-style: italic;
+  &__ps {
     position: relative;
-}
-
-.about__asterisk {
-    position: absolute;
-    top: 10px;
-    left: -40px;
-    opacity: 0.1;
-    color: #db0200;
-    font-size: 48px;
     font-style: italic;
-    line-height: 30px;
+    font-weight: normal;
+
+    &:before {
+      content: '';
+      position: absolute;
+      background: url("~images/content/star.png");
+      width: 22px;
+      height: 22px;
+      top: 5px;
+      left: -53px;
+    }
+  }
 }

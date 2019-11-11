@@ -1,32 +1,41 @@
 .user {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-}
+  display: flex;
+  align-items: center;
 
-.user__avatar {
-    margin-bottom: 20px;
-}
+  &__column:not(:last-child) {
+    margin-right: 30px;
+  }
 
-.user__desc {
-    width: 280px;
-}
+  &__row:not(:last-child) {
+    margin-bottom: 10px;
+  }
 
-.user__desc-item {
-    display: flex;
-    justify-content: space-between;
-    margin-bottom: 30px;
-    font-weight: 600;
-
-    @include phones {
-        margin-bottom: 15px;
+  &__name {
+    font-size: 18px;
+    font-weight: 700;
+    line-height: 1;
+    @include tablets {
+      font-size: 16px;
     }
+  }
+
+  &__occ {
+    color: rgba($text-color, .3);
+    font-size: 16px;
+    font-weight: 600;
+    line-height: 1;
+    @include tablets {
+      font-size: 14px;
+    }
+  }
 }
 
-.user__key {
-    opacity: .3;
-}
+.user--admin-header {
+  .user__name {
+    color: #fff;
+  }
 
-.user__value {
-    width: 108px;
+  .user__column:not(:last-child) {
+    margin-right: 20px;
+  }
 }
