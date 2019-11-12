@@ -2,27 +2,102 @@
   .about-page-container
     .container
       .about-page__title
-        h1.page-title Обо мне
+        h1.page-title Блок «Обо мне»
         button.about-page__add-new(
           @click="showAddingForm = true"
           v-if="showAddingForm === false"
         ) Добавить группу
 
     .about-page__content
-      .container.container--mobile-wide
-        ul.skill-list
-          li.skill-list__item(v-if="showAddingForm")
-            skills-add(
-            )
-          li.skill-list__item(
-            v-for="category in categories"
-            :key="category.id"
-          )
-            skills-group(
-              :category="category"
-              :skills="filterSkillsByCategoryId(category.id)"
-            )
-
+      .container
+        ul.about__list
+          li.about__item
+           .card
+              .card__header
+                .card__column
+                  input(type="text", placeholder='Название новой группы').form__input
+                .card__column
+                  .controls
+                    .controls__btn
+                      button(type='button').btn.btn-icon__tick
+                    .controls__btn
+                      button(type='button').btn.btn-icon__cancel
+              .card__content
+              .card__footer
+                .card__column
+                  form.add-new-skill.is-blocked
+                    .add-new-skill__cell
+                      input(type="text", placeholder='Новый навык').form__input
+                    .add-new-skill__cell
+                      input(type="number").form__input
+                    .add-new-skill__cell
+                      button(type="submit").btn.btn__add.btn__big
+          
+          li.about__item
+            .card
+              .card__header
+                .card__column
+                  .page-subtitle Workflow
+                .card__column
+                  .controls
+                    .controls__btn
+                      button(type='button').btn.btn-icon__tick
+                    .controls__btn
+                      button(type='button').btn.btn-icon__cancel
+              .card__content
+                .skills
+                  .skills__row(v-for="item in [{ key: 'Git', value: 100 }, { key: 'Terminal', value: 90 }, { key: 'Gulp', value: 80 }, { key:'Webpack', value: 70 }]")
+                    .skills__cell {{ item.key }}
+                    .skills__cell {{ item.value }} %
+                    .skills__cell
+                      .controls
+                        .controls__btn
+                          button(type='button').btn.btn-icon__pencil
+                        .controls__btn
+                          button(type='button').btn.btn-icon__delete
+              .card__footer
+                form.add-new-skill
+                  .add-new-skill__cell
+                    input(type="text", placeholder='Новый навык').form__input
+                  .add-new-skill__cell
+                    input(type="number").form__input
+                  .add-new-skill__cell
+                    button(type="submit").btn.btn__add.btn__big   
+          li.about__item
+            .card
+              .card__header
+                .card__column
+                  .page-subtitle Frontend
+                .card__column
+                  .controls
+                    .controls__btn
+                      button(type='button').btn.btn-icon__pencil
+              .card__content
+                .skills
+                  .skills__row
+                    .skills__cell
+                      input(type="text" value="HTML5").form__input
+                    .skills__cell
+                      input(type="text" value="25").form__input.form__input__strong
+                    .skills__cell
+                  .skills__row(v-for="item in [{ key: 'СSS3', value: 100 }, { key: 'JavaScript', value: 90 }, { key: 'Jquery и Vue.js', value: 80 }]")
+                    .skills__cell {{ item.key }}
+                    .skills__cell {{ item.value }} %
+                    .skills__cell
+                      .controls
+                        .controls__btn
+                          button(type='button').btn.btn-icon__tick
+                        .controls__btn
+                          button(type='button').btn.btn-icon__cancel
+              .card__footer
+                .card__column
+                  form.add-new-skill
+                    .add-new-skill__cell
+                      input(type="text", placeholder='Новый навык').form__input
+                    .add-new-skill__cell
+                      input(type="number").form__input
+                    .add-new-skill__cell
+                      button(type="submit").btn.btn__add.btn__big               
 </template>
 
 <script>
@@ -89,6 +164,14 @@ export default {
     }
   }
 
+  .page-subtitle {
+    color: #414c63;
+  font-family: "Open Sans";
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 32px;
+  }
+
   @include phones {
     flex-direction: column;
     align-items: flex-start;
@@ -115,33 +198,6 @@ export default {
     margin-right: 13px;
     flex-shrink: 0;
     flex-basis: 20px;
-  }
-}
-
-.skill-list {
-  display: flex;
-  flex-wrap: wrap;
-  margin-left: -30px;
-  @include phones {
-    margin-left: 0;
-  }
-}
-
-.skill-list__item {
-  width: calc(100% / 2 - 30px);
-  margin-left: 30px;
-  margin-bottom: 30px;
-
-  &.loading {
-    opacity: 0.5;
-    pointer-events: none;
-    filter: grayscale(100%);
-  }
-
-  @include phones {
-    width: 100%;
-    margin-left: 0;
-    margin-bottom: 12px;
   }
 }
 </style>

@@ -29,7 +29,7 @@ export default {
     height: 0;
     border: 10px solid transparent;
     border-top: 0;
-    border-bottom-color: $#cd1515;
+    border-bottom-color: #cd1515;
     border-bottom-width: 7px;
     position: absolute;
     bottom: 100%;

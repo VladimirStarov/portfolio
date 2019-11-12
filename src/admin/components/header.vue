@@ -6,7 +6,7 @@
           .user__pic
             img(src="../../images/content/user.jpg").user__pic-avatar
           .user__name 
-            span Владимир Астаханов
+            span Владимир Старов
             a.exit-btn(@click="logout") Выйти
             
         .header__title Панель администрирования

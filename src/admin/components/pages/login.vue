@@ -24,6 +24,7 @@
 
 <script>
 import $axios from "@/requests";
+
 export default {
   components: {
     appInput: () => import("components/input.vue")
@@ -31,8 +32,8 @@ export default {
   data() {
     return {
       user: {
-        name: "admin",
-        password: "admin"
+        name: "login",
+        password: "•••••••••••••••••••••"
       }
     };
   },
