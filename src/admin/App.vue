@@ -16,10 +16,11 @@
   @import "../styles/layout/base.pcss";
   @import "../styles/blocks/user.pcss";
   @import "../styles/blocks/avatar.pcss";
+  @import "../styles/blocks/tags.pcss";
   @import "./components/*.pcss";
 
   .root-container {
-    background: url("~images/bg/bg_welcome.jpg") 50%/cover no-repeat;
+    background: url("~images/content/welcom_bg.jpg") 50%/cover no-repeat;
     position: relative;
     min-height: 100vh;
 

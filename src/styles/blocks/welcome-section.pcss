@@ -1,0 +1,19 @@
+.welcome-section {
+    position: relative;
+
+    &::before {
+        content: "";
+        display: none;
+        position: absolute;
+        top: 0;
+        bottom: 0;
+        right: 0;
+        left: 0;
+        background: url("~images/content/welcom_bg.jpg") 65% 0 / cover no-repeat;
+        z-index: -1;
+
+        @include tablets {
+            display: block;
+        }
+    }
+}

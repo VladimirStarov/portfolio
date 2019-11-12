@@ -1,0 +1,42 @@
+script(type="text/x-template")#reviews-container
+    .reviews__box
+        .reviews__header
+            h2.reviews__section-title Что обо мне говорят
+            .reviews__control
+                ul.controls
+                    li(@click="slide('prev')").controls__item.controls--circle
+                        button.controls__button
+                            +icon('arrow-down', 'reviews-controls__arrow-down controls__arrow-down--prev' )
+                    li(@click="slide('next')").controls__item.controls--circle
+                        button.controls__button
+                            +icon('arrow-down', 'reviews-controls__arrow-down controls__arrow-down--next')
+        display(
+            :reviews="reviews"
+        )
+
+script(type="text/x-template")#sliderReview-container
+    .reviews-slider
+        display(
+            :reviews="reviews"
+        )
+
+script(type="text/x-template")#reviews-display        
+    Carousel(
+        :paginationEnabled="false"
+        :navigationEnabled="true"
+        :perPageCustom=[[0,1], [768,2]]
+    ).reviews-slider__list
+        Slide.reviews-slider__item(
+            v-for="review in reviews",
+            :key="review.id"
+        )
+            .reviews-slider__icon: +icon('quote', 'reviews__icon-quote')
+            .reviews-slider__content
+                .reviews-slider__text
+                    p {{review.text}}
+                .reviews-slider__user
+                    .reviews-slider__author-image
+                        img(:scr="review.avatar" alt="").reviews-slider__avatar
+                    .reviews-slider__author-info
+                        .reviews-slider__author-name {{review.author}}
+                        .reviews-slider__author-profession  {{review.position}}

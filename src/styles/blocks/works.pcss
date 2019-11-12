@@ -1,55 +1,102 @@
 .works {
-    padding: 60px 0 172px;
-    @include tablets {
-      padding-bottom: 100px;
-    }
-  
-    &__wrapper {
-      display: flex;
-      @media screen and (max-width: 1070px) {
-        flex-direction: column;
-      }
-    }
-  
-    &__title {
-      margin-bottom: 90px;
-      @include tablets {
-        margin-bottom: 50px;
+    padding: 10% 0;
+}
+
+.works__container {
+    @media screen and (max-width: 690px) {
+    width: 100%;
+}
+}
+
+.works__title {
+    margin-bottom: 90px;
+
+    @media screen and (max-width: 940px) {
         text-align: center;
-      }
-      @include phones {
-        margin-bottom: 30px;
-      }
     }
-  
-    &__slider {
-      width: 100%;
-      max-width: 1135px;
-      @media screen and (max-width: 1070px) {
-        margin-bottom: 60px;
-      }
-      @include tablets {
-        width: 105%;
-        margin-left: -2.5%;
-        margin-right: -2.5%;
-  
-      }
-      @include phones {
-        width: 117%;
-        margin-left: -8.5%;
-        margin-right: -8.5%;
-      }
+}
+.works__content {
+    display: flex;
+
+    @media screen and (max-width: 940px) {
+        flex-direction: column;
+        align-items: center;
     }
-  
-    &__content {
-      width: 340px;
-      flex-shrink: 0;
-      @media screen and (max-width: 1070px) {
-        width: 100%;
-      }
+}
+
+.works__left {
+     width: 70%;
+     margin-right: 150px;
+
+     @include desktop {
+         margin-right: 100px;
+     }
+
+     @media screen and (max-width: 940px) {
+         width: 80%;
+         margin-bottom: 100px;
+         margin-right: 0;
+     }
+
+     @media screen and (max-width: 690px) {
+         width: 100%;
+     }
+}
+
+.works__slider {
+    position: relative;
+}
+
+.works-controls__arrow-down {
+    width: 10px;
+    height: 8px;
+    fill: #5c6876;
+    cursor: pointer;
+
+    &:hover {
+        fill: #fff;
     }
-  
-    &__tags {
-      margin-bottom: 23px;
+}
+
+.works__right {
+    width: 30%;
+
+    @media screen and (max-width: 940px) {
+        width: 70%;
+        text-align: center;
+
+        @include phones {
+            width: 80%;
+        }
     }
-  }
+}
+
+.works__tags {
+    display: flex;
+
+    @include tablets {
+        justify-content: center;
+    }
+}
+
+.works__text {
+    text-align: start;
+
+    @media screen and (max-width: 940px) {
+        text-align: center;
+    }
+}
+
+.works__subtitle {
+    font-size: 30px;
+    font-weight: 700;
+    line-height: 48px;
+    margin-bottom: 40px;
+}
+
+.works__desc-text {
+    opacity: .7;
+    font-weight: 600;
+    line-height: 30px;
+    margin-bottom: 40px;
+}

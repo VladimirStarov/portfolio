@@ -13,11 +13,11 @@
               name="login",
               id="form_login",
               v-model="reg.login",
-              placeholder="login-2019").form__input.form__p-left
+              placeholder="login-102019").form__input.form__p-left
             .form__icon
               svg.form__icon--user
                 use(xlink:href="sprite.svg#user")
-          small.form__error {{ validation.firstError('reg.login') }}
+          small.form__error {{ validation.firstError('reg.login') }} 
 
         .login__row
           label(for="form_password").form__label.form__p-left Пароль
@@ -27,7 +27,7 @@
               name="password",
               id="form_password",
               v-model="reg.password",
-              placeholder="•••••••••••••").form__input.form__p-left
+              placeholder="•••••••••").form__input.form__p-left
             .form__icon
               svg.form__icon--key
                 use(xlink:href="sprite.svg#key")

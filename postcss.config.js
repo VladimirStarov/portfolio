@@ -10,7 +10,6 @@ module.exports = {
     require("autoprefixer")({
       cascade: false
     }),
-    require("postcss-each"),
     require("postcss-advanced-variables")({
       variables: JSON.parse(
         fs.readFileSync("./src/styles/variables.json", "utf-8")
@@ -25,7 +24,7 @@ module.exports = {
     require("cssnano"),
     require("postcss-pxtorem")({
       rootValue: 16,
-      propList: ["*", "!*border*", "!*PX*"],
+      propList: ["*", "!*border*"],
       selectorBlackList: [/^html$/]
     })
   ]

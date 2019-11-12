@@ -1,0 +1,31 @@
+.skills-row__title {
+    margin-bottom: 20px;
+    font-size: 24px;
+    font-weight: 700;
+}
+.skills-row__list {
+    display: flex;
+    flex-wrap: wrap;
+
+    @include tablets {
+        justify-content: center;
+    }
+}
+
+.skills-row__item {
+    position: relative;
+    margin-right: 60px;
+    text-align: center;
+
+    @media screen and (max-width: 1500px) {
+        margin-right: 32px;
+    }
+    
+    @include desktop {
+        margin-right: 30px;
+    }
+
+    @include tablets {
+        margin-right: 15px;
+    }
+}

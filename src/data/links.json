@@ -1,0 +1,20 @@
+[
+    {   "href": "#hero",
+        "text": "Главная"
+    },
+    {   "href": "#about",
+        "text": "Обо мне"
+    },
+    {   "href": "#values",
+        "text": "Навыки"
+    },
+    {   "href": "#worksMy",
+        "text": "Работы"
+    },
+    {   "href": "#reviews",
+        "text": "Отзыва"
+    },
+    {   "href": "#feedback",
+        "text": "Связаться"
+    }
+]

@@ -17,7 +17,7 @@
                   .edit-form__row
                     .edit-form__frame
                       svg(fill="#fff" width="70%" height="70%")
-                        use(xlink:href="sprite.svg#user-full")
+                        use(xlink:href="sprite.svg#user")
                   .edit-form__row
                     .edit-form__button
                       button(type="button").btn
@@ -25,17 +25,20 @@
                 .edit-form__column
                   .edit-form__row-double
                     .edit-form__row
-                      label(for="form_reviews-name", class="form__label") Имя автора
-                      .form__input-wrap
-                        input(type="text", name="reviews-name", id="form_reviews-name", placeholder="Ковальчук Дмитрий", required="required", class="form__input")
+                      .form__row
+                        label(for="form_reviews-name", class="form__label") Имя автора
+                        .form__input-wrap
+                          input(type="text", name="reviews-name", id="form_reviews-name", placeholder="Ковальчук Дмитрий", required="required", class="form__input")
                     .edit-form__row
-                      label(for="form_reviews-link", class="form__label") Титул автора
-                      .form__input-wrap
-                        input(type="text", name="reviews-link", id="form_reviews-link", placeholder="Основатель LoftSchool", required="required", class="form__input")
+                      .form__row
+                        label(for="form_reviews-link", class="form__label") Титул автора
+                        .form__input-wrap
+                            input(type="text", name="reviews-link", id="form_reviews-link", placeholder="Основатель LoftSchool", required="required", class="form__input")
                   .edit-form__row
-                    label(for="form-reviews-desc", class="form__label") Отзыв 
-                    .form__input-wrap
-                      textarea(name="reviews-desc", id="form-reviews-desc", placeholder="Этот парень проходил обучение веб-разработке не где-то, а в LoftSchool! 4,5 месяца только самых тяжелых испытаний и бессонных ночей!", required="required", class="form__textarea")
+                    .form__row
+                      label(for="form-reviews-desc", class="form__label") Отзыв 
+                        .form__input-wrap
+                          textarea(name="reviews-desc", id="form-reviews-desc", placeholder="Этот парень проходил обучение веб-разработке не где-то, а в LoftSchool! 4,5 месяца только самых тяжелых испытаний и бессонных ночей!", required="required", class="form__textarea")
                   .edit-form__row
                     .controls.edit-form__btns
                       .controls__btn
@@ -100,3 +103,4 @@
                           .btn__column
                             svg(width="15" height="15").btn-icon--red
                               use(xlink:href="sprite.svg#cross")
+                          

@@ -1,0 +1,32 @@
+.skill__shape {
+    width: 150px;
+    height: 150px;
+    fill: transparent;
+    stroke-width: 10px;
+    transform: rotate(-180deg);
+
+    @include phones {
+        width: 130px;
+        height: 130px;
+    }
+}
+
+.skill__circle--position--under {
+    stroke: #e9e9e9;
+}
+
+.skill__circle--position--above {
+    stroke-width: 20px;
+    stroke-dasharray: 502;
+    stroke-dashoffset: 400;
+}
+
+.skill__title {
+    position: absolute;
+    top: 46%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    font-size: 18px;
+    font-weight: 700;
+    opacity: .5;
+}

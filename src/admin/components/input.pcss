@@ -1,3 +1,5 @@
+/* Form's elements
+============================================================================================ */
 .form {
   &__input-wrap {
     position: relative;
@@ -30,21 +32,21 @@
 
     &:focus,
     &:focus {
-      border-bottom-color: $links-active;
+      border-bottom-color: #5500f2;
     }
 
     &:focus ~ .form__icon {
-      fill: $links-active
+      fill: #5500f2
     }
 
     &--error {
       .form__icon {
-        fill: $errors-color;
+        fill: #cd1515;
       }
 
       & > input[type="text"],
       & > input[type="password"] {
-        border-color: $errors-color;
+        border-color: #cd1515;
       }
     }
   }

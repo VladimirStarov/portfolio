@@ -1,10 +1,20 @@
-(function (className) {
-  const btn = document.querySelector(className);
-  const bodyTag = document.querySelector('body');
-  const btnClose = document.querySelector('.popup-menu__btn btn--close');
+const burgerBtn = document.querySelector('.hamburger');
+const popupBtn = document.querySelector('.popup__btn');
+const popup = document.querySelector('.popup');
+const sidebar = document.querySelector('.popup__sidebar');
+const body = document.querySelector('body');
 
-  btn.addEventListener('click', (e) => {
-    console.log('click');
-    bodyTag.classList.toggle('overlay');
-  });
-})('.burger');
+burgerBtn.addEventListener('click', function (e) {
+    sidebar.style.right = 0;
+    popup.style.right = 0;
+    popup.style.opacity = 1;
+    body.style.overflow = 'hidden';
+
+});
+
+popupBtn.addEventListener('click', function (e) {
+    sidebar.style.right = 100 + 'vw';
+    popup.style.right = -100 + 'vw';
+    popup.style.opacity = 0;
+    body.style.overflow = 'scroll';
+});
