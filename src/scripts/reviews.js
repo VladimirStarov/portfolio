@@ -12,8 +12,6 @@ const display = {
     props:["reviews"],
     mounted() {
         EventBus.$on('slide', direction => {
-            console.log('clicked', direction);
-
             switch (direction) {
                 case "prev" : 
                     document.querySelector('.VueCarousel-navigation-prev').click();
@@ -36,11 +34,12 @@ new Vue({
     methods: {
         makeArrWithRequiredImages(data) {
             return data.map(item => {
-                const requiredPic = require(`../images/ava/${item.avatar}`);
-                item.avatar = requiredPic;
+                const requiredPic = require(`../images/reviews/${item.photo}`);
+                item.photo = requiredPic;
                 return item
-            }); 
+            });
         },
+        
         slide(direction) {
             EventBus.$emit('slide', direction)
         }

@@ -13,7 +13,7 @@ script(type="text/x-template")#reviews-container
         display(
             :reviews="reviews"
         )
-
+        
 script(type="text/x-template")#sliderReview-container
     .reviews-slider
         display(
@@ -36,7 +36,8 @@ script(type="text/x-template")#reviews-display
                     p {{review.text}}
                 .reviews-slider__user
                     .reviews-slider__author-image
-                        img(:scr="review.avatar" alt="").reviews-slider__avatar
+                        img(:src="review.photo" alt="").reviews-slider__avatar
                     .reviews-slider__author-info
                         .reviews-slider__author-name {{review.author}}
                         .reviews-slider__author-profession  {{review.position}}
+                        img(:scr="review.avatar" alt="").reviews-slider__avatar
