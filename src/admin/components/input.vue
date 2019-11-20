@@ -5,6 +5,7 @@
   )
     .input__title(v-if="title") {{title}} 
     input(
+      required="required"
       v-bind="$attrs"
       :value="value" 
       @input="$emit('input', $event.target.value)"

@@ -9,7 +9,7 @@ const TerserPlugin = require("terser-webpack-plugin");
 
 module.exports = (env, argv) => {
   const isProductionBuild = argv.mode === "production";
-  const publicPath = '/portfolio/';
+  const publicPath = '/';
 
   const pcss = {
     test: /\.(p|post|)css$/,
@@ -31,7 +31,7 @@ module.exports = (env, argv) => {
     exclude: /node_modules/,
     options: {
       presets: ['@babel/preset-env'],
-      plugins: ["@babel/plugin-syntax-dynamic-import"]
+      plugins: ["@babel/plugin-syntax-dynamic-import", "transform-regenerator"]
     }
   };
 
@@ -85,8 +85,8 @@ module.exports = (env, argv) => {
 
   const config = {
     entry: {
-      main: ["@babel/polyfill", "./src/main.js"],
-      admin: ["@babel/polyfill", "./src/admin/main.js"]
+      main: "./src/main.js",
+      admin: ["babel-polyfill", "./src/admin/main.js"]
     },
     output: {
       path: path.resolve(__dirname, "./dist"),

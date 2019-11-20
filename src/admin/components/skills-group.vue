@@ -1,47 +1,61 @@
 <template lang="pug">
-  .skill-container
-    h2 {{category.category}}
-    hr
-    table
-      skills-item(
-        v-for="skill in skills"
-        :key="skill.id"
-        :skill="skill"
-      )
-    hr
-    .add-skill-wrapper.blocked
-      input(type="text" v-model="skill.title" placeholder="Добавить скилл")
-      input(type="text" v-model="skill.percent" placeholder="Проценты")
-      button(type="button" @click="addNewSkill") Добавить
-  
+  form(@submit.prevent="addNewSkill" :class="{ 'is-blocked': formBlocked }").add-new-skill
+    .add-new-skill__cell
+      input.form__input(
+        required="required"
+        type="text"
+        name="title"
+        placeholder='Новый навык'
+        v-model="skill.title")
+    .add-new-skill__cell
+      input(
+        required="required"
+        type="number"
+        name="percent"
+        v-model="skill.percent").form__input
+    .add-new-skill__cell
+      button(type="submit").btn.btn__add.btn__big
 </template>
 
 <script>
 import { mapActions } from "vuex";
+import SimpleVueValidator from 'simple-vue-validator';
+
+const Validator = SimpleVueValidator.Validator;
+
 export default {
-  props: {
-    category: Object,
-    skills: Array,
-  },
-  data() {
+  mixins: [SimpleVueValidator.mixin],
+  name: 'skills-group',
+  props: ['category'],
+  data () {
     return {
+      formBlocked: !this.category,
       skill: {
-        category: this.category.id,
-        title: "",
-        percent: ""
+        title: '',
+        percent: 0
       }
+    };
+  },
+  validators: {
+    'skill.title': value => {
+    
+    },
+    'skill.percent': value => {
+      return Validator.value(value)
+        
     }
   },
-  components: {
-    skillsItem: () => import("components/skills-item.vue")
-  },
+ 
   methods: {
     ...mapActions('skills', ['addSkill']),
-    async addNewSkill() {
-      try {
+    async addNewSkill () {
+      if (await this.$validate()) {
+        this.formBlocked = true;
+        this.skill.category = this.category.id;
         await this.addSkill(this.skill);
-      } catch (error) {
-        // error 
+        this.formBlocked = this.skill.title = '';
+        this.skill.percent = 0;
+        this.validation.reset();
       }
     }
   }

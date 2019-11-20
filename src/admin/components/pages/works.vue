@@ -9,7 +9,7 @@
               .card__column
                 .page-subtitle Редактирование работы
             .card__content
-              form.edit-form.form__strong
+              form.edit-form.form__works
                 .edit-form__column
                   input(type="file", name="work-image")#upload-pic.edit-form__file
                   .edit-form__row
@@ -99,6 +99,14 @@
     flex-basis: calc(100% / 3 - 30px);
     margin-left: 30px;
     margin-bottom: 30px;
+
+    @media screen and (max-width: 937px) {
+      flex-basis: calc(100% / 2 - 30px);
+    }
+
+    @media screen and (max-width: 584px) {
+      flex-basis: calc(100% - 30px);
+    }
   }
 
   &__row {
@@ -112,5 +120,11 @@
       line-height: 30px;
     }
   }
+}
+
+.form__works {
+  @media screen and (max-width:800px) {
+      flex-direction: column;
+    }
 }
 </style>

@@ -14,7 +14,7 @@
               form.edit-form.edit-form--reviews.form__strong
                 .edit-form__column
                   input(type="file", name="reviews-image")#upload-pic.edit-form__file
-                  .edit-form__row
+                  .edit-form__row.edit-form__row-reviews
                     .edit-form__frame
                       svg(fill="#fff" width="70%" height="70%")
                         use(xlink:href="sprite.svg#user")
@@ -165,6 +165,14 @@ export default {
     flex-basis: calc(100% / 3 - 30px);
     margin-left: 30px;
     margin-bottom: 30px;
+
+    @media screen and (max-width: 937px) {
+      flex-basis: calc(100% / 2 - 30px);
+    }
+
+    @media screen and (max-width: 584px) {
+      flex-basis: calc(100% - 30px);
+    }
   }
 
   &__row {

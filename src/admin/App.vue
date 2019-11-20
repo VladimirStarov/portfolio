@@ -15,7 +15,7 @@ import { mapState, mapActions, mapGetters } from "vuex";
 export default {
   components: {
     appHeader: () => import("components/header"),
-    tabs: () => import("components/tabs")
+    tabs: () => import("components/tabs"),
   }
 };
 </script>
@@ -89,7 +89,6 @@ export default {
     flex-basis: calc(50% - 30px);
     margin-left: 30px;
     margin-bottom: 30px;
-    min-height: 387px;
   }
 }
 
@@ -298,7 +297,7 @@ export default {
     height: 12px;
   }
 
-  &--pencil {
+  &__pencil {
     background-image: svg-load("pencil.svg", fill=#414c63);
     width: 16px;
     height: 15px;
@@ -546,7 +545,11 @@ export default {
       margin-right: 0;
     }
   }
-
+  &--reviews {
+    @media screen and (max-width:700px) {
+      flex-direction: column;
+    }
+  }
   &--reviews > &__column:nth-child(1){
     flex-basis: auto;
   }
@@ -601,7 +604,6 @@ export default {
       img {
         object-fit: cover;
       }
-    //background-color: #dee4ed;
     }
   }
 
@@ -620,6 +622,11 @@ export default {
   }
 }
 
+.edit-form__row-reviews {
+  @media screen and (max-width: 700px) {
+    align-items: center;
+  }
+}
 .page {
     &-title,
     &-subtitle {

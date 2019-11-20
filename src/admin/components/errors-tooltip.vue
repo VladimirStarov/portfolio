@@ -1,13 +1,27 @@
 <template lang="pug">
-  .input__error-tooltip-container {{errorText}}
+  .error-tooltip-container(:class="{ showed: showed }")
+    .errors-(:class="'tooltip--' + type")
+      .errors-tooltip__text {{ message }}
+      button(@click="closeTooltip").tooltip__close
 </template>
 
 <script>
+import { mapState, mapActions } from 'vuex';
+
 export default {
-  props: {
-    errorText: {
-      type: String,
-      default: "Ошибка"
+
+  methods: {
+    ...mapActions('tooltip', ['closeTooltip'])
+  },
+  watch: {
+    showed (value) {
+      if (value) {
+        let timeout;
+
+        clearTimeout(timeout);
+
+        timeout = setTimeout(() => this.closeTooltip(), 3000);
+      }
     }
   }
 };
@@ -15,26 +29,47 @@ export default {
 
 
 <style lang="postcss" scoped>
-.input__error-tooltip-container {
-  z-index: 100;
-  background: #cd1515;
-  color: #fff;
-  padding: 12px 20px;
-  font-size: 14px;
-  white-space: nowrap;
-  &:before {
-    content: "";
-    display: block;
-    width: 0;
-    height: 0;
-    border: 10px solid transparent;
-    border-top: 0;
-    border-bottom-color: #cd1515;
-    border-bottom-width: 7px;
-    position: absolute;
-    bottom: 100%;
+.tooltip {
+  &-container {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    position: fixed;
+    bottom: -100%;
     left: 50%;
     transform: translateX(-50%);
+    visibility: hidden;
+    transition: 0.3s;
+
+    &.showed {
+      bottom: 0;
+      visibility: visible;
+    }
+  }
+
+  color: #fff;
+  display: flex;
+  justify-content: space-between;
+  position: relative;
+  width: 100%;
+  max-width: 400px;
+  background: #4bb133;
+  padding: 22px;
+
+  &__close {
+    width: 20px;
+    height: 20px;
+    background: svg-load('cross.svg', fill=#fff) center center no-repeat;
+    cursor: pointer;
+    margin-left: 20px;
+  }
+
+  &--warning {
+    background: #b18333;
+  }
+
+  &--error {
+    background: #b13333;
   }
 }
 </style>
